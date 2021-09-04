@@ -9,3 +9,4 @@ do
 b='expr $c \* $i'
  echo "$c * $i= $b"
 i='expr $i+1'
+done
