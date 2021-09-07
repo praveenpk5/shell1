@@ -8,7 +8,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc' >/etc/yum.repos.d/mongodb.repo
 Install Mongo & Start Service.
 
-yum install -y mongodb-org
+yum install -y mongodb-org >/tmp/log
 
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf  
 Update Liste IP address from 127.0.0.1 to 0.0.0.0 in config file
