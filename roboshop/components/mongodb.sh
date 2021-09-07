@@ -1,5 +1,3 @@
-echo "installing mongodb"
-
 echo '[mongodb-org-4.2]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
