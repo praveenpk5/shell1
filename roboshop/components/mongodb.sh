@@ -10,6 +10,7 @@ if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
  else
  echo -e "\e[31mFAILURE\e[0m"
+ exit 2
  fi
  
  
@@ -19,6 +20,7 @@ if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
  else
  echo -e "\e[31mFAILURE\e[0m"
+ exit 2
  fi
  
 echo "Config MongoDB"
@@ -27,6 +29,7 @@ if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
  else
  echo -e "\e[31mFAILURE\e[0m"
+ exit 2
  fi
 
 echo "starting MongoDB"
@@ -36,6 +39,7 @@ if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
  else
  echo -e "\e[31mFAILURE\e[0m"
+ exit 2
  fi
  
 echo "Downloading MongoDB"
@@ -44,6 +48,7 @@ if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
  else
  echo -e "\e[31mFAILURE\e[0m"
+ exit 2
  fi
 cd /tmp
 echo "extracting schema"
@@ -52,6 +57,7 @@ if [ $? -eq 0 ]; then
  echo -e "\e[32mSUCCESS\e[0m"
  else
  echo -e "\e[31mFAILURE\e[0m"
+ exit 2
  fi
  
 cd mongodb-main 
@@ -63,3 +69,4 @@ if [ $? -eq 0 ]; then
  else
  echo -e "\e[31mFAILURE\e[0m"
  fi
+ exit 0
