@@ -40,7 +40,11 @@ if [ $? -eq 0 ]; then
  
 echo "Downloading MongoDB"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
-
+if [ $? -eq 0 ]; then
+ echo -e "\e[32mSUCCESS\e[0m"
+ else
+ echo -e "\e[31mFAILURE\e[0m"
+ fi
 cd /tmp
 echo "extracting schema"
 unzip -o mongodb.zip &>>/tmp/log
