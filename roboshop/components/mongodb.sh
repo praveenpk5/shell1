@@ -14,7 +14,7 @@ status_check $?
 
 
  print "Installing MongoDB"
-yum install -y mongodb-org &>>/tmp/log
+yum install -y mongodb-org &>>$LOG
 status_check $?
  
 print "Config MongoDB\t"
@@ -32,13 +32,13 @@ status_check $?
 
 cd /tmp
 print "extracting schema"
-unzip -o mongodb.zip &>>/tmp/log
+unzip -o mongodb.zip &>>$LOG
 status_check $?
 
 cd mongodb-main 
 print "Loading schema\t"
-mongo < catalogue.js &>>/tmp/log
-mongo < users.js &>>/tmp/log
+mongo < catalogue.js &>>$LOG
+mongo < users.js &>>$LOG
 status_check $?
 
 exit 0
