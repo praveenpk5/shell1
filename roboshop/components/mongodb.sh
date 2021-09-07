@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Setting MongoDB"
 
 echo '[mongodb-org-4.2]
