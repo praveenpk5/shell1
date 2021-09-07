@@ -50,3 +50,6 @@ print "Loading schema\t"
 mongo < catalogue.js &>>/tmp/log
 mongo < users.js &>>/tmp/log
 status_check $?
+
+exit 0
+
