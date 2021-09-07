@@ -9,7 +9,7 @@ Status_Check() {
   fi 
 }
 print() {
-    echo -n -e "$1 \t-"
+    echo -n -e "$1 \t- "
 }
 
 if [ $UID -ne 0 ]; then 
