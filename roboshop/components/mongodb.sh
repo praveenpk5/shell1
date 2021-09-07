@@ -27,7 +27,7 @@ status_check $?
 yum install -y mongodb-org &>>/tmp/log
 status_check $?
  
-print "Config MongoDB"
+print "Config MongoDB\t"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf  
 status_check $?
 
@@ -46,7 +46,7 @@ unzip -o mongodb.zip &>>/tmp/log
 status_check $?
 
 cd mongodb-main 
-print "Loading schema"
+print "Loading schema\t"
 mongo < catalogue.js &>>/tmp/log
 mongo < users.js &>>/tmp/log
 status_check $?
