@@ -1,1 +1,1 @@
-echo "installing catalogue"
+#!/bin/bash
