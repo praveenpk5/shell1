@@ -8,8 +8,11 @@ status_check() {
  exit 2
  fi
  } 
+print() {
+ echo -n -e "$1 \t- "
+}
  
-echo "Setting MongoDB"
+print "Setting MongoDB"
 
 echo '[mongodb-org-4.2]
 name=MongoDB Repository
@@ -20,30 +23,30 @@ gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc' >/etc/yum.repos.d/mong
 status_check $?
 
 
- echo "Installing MongoDB"
+ print "Installing MongoDB"
 yum install -y mongodb-org &>>/tmp/log
 status_check $?
  
-echo "Config MongoDB"
+print "Config MongoDB"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf  
 status_check $?
 
-echo "starting MongoDB"
+print "starting MongoDB"
  systemctl enable mongod
  systemctl restart mongod
 status_check $?
  
-echo "Downloading MongoDB"
+print "Downloading MongoDB"
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
 status_check $?
 
 cd /tmp
-echo "extracting schema"
+print "extracting schema"
 unzip -o mongodb.zip &>>/tmp/log
 status_check $?
 
 cd mongodb-main 
-echo "Loading schema"
+print "Loading schema"
 mongo < catalogue.js &>>/tmp/log
 mongo < users.js &>>/tmp/log
 status_check $?
