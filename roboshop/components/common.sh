@@ -8,7 +8,6 @@ Status_Check() {
     exit 2
   fi 
 }
-
 Print() {
   echo -e "\n\t\t\e[36m----------------- $1 ----------------------\e[0m\n" >>$LOG
   echo -n -e "$1 \t- "
