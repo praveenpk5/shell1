@@ -4,7 +4,7 @@ source components/common.sh
 
 print "installing NodeJS"
 yum install nodejs make gcc-c++ -y &>>$LOG
-status_check$?
+status_check $?
 
 print "Adding Roboshop User"
 useradd roboshop &>>$LOG
