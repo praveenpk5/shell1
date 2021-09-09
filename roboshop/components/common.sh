@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 
 Status_Check() {
   if [ $1 -eq 0 ]; then 
@@ -9,8 +9,9 @@ Status_Check() {
   fi 
 }
 
-print() {
-    echo -n -e "$1 \t- "
+Print() {
+  echo -e "\n\t\t\e[36m----------------- $1 ----------------------\e[0m\n" >>$LOG
+  echo -n -e "$1 \t- "
 }
 
 if [ $UID -ne 0 ]; then 
