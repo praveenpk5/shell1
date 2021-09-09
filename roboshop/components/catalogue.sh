@@ -3,7 +3,7 @@
 source components/common.sh
 
 print "installin NodeJS"
-yum install nodejs make gcc-c++ -y 
+yum install nodejs make gcc-c++ -y  &>>$LOG
 status_check $?
 
 print "Adding Roboshop User"
@@ -20,7 +20,7 @@ mv catalogue-main catalogue
 status_check $?
 
 cd /home/roboshop/catalogue
-npm install 
+npm install &>>$LOG
 
 
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
