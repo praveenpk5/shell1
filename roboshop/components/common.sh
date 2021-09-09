@@ -8,6 +8,7 @@ Status_Check() {
     exit 2
   fi 
 }
+
 print() {
     echo -n -e "$1 \t- "
 }
