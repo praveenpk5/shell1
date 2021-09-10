@@ -15,11 +15,11 @@ useradd roboshop &>>$LOG
 fi
 Status_Check $?
 
-Print "Downloading catalogue content\t"
+Print "Downloading catalogue content"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 Status_Check $?
 
-Print "extracting catalogue"
+Print "extracting catalogue\t"
 cd /home/roboshop
 rm -rf catalogue && unzip -o /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue
 Status_Check $?
@@ -31,6 +31,6 @@ Status_Check $?
 
 chown roboshop:roboshop -R /home/roboshop
 
-Print "systemd setup"
+Print "systemd setup\t\t"
 mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service && systemctl daemon-reload && systemctl start catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
 Status_Check $?
