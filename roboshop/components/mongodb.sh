@@ -16,7 +16,7 @@ Print "Installing MongoDB"
 yum install -y mongodb-org &>>$LOG
 Status_Check $?
  
-print "Config MongoDB\t"
+Print "Config MongoDB\t"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf  
 Status_Check $?
 
