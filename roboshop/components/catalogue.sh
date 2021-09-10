@@ -27,7 +27,7 @@ Status_Check $?
 
 Print "Download NodeJS Dependencies"
 cd /home/roboshop/catalogue
-npm install &>>$LOG
+npm install --unsafe-perm &>>$LOG
 
 chown roboshop:roboshop -R /home/roboshop
 
