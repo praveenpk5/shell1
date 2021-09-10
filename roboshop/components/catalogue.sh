@@ -2,11 +2,11 @@
 
 source components/common.sh
 
-Print "installing NodeJS"
+Print "installing NodeJS\t"
 yum install nodejs make gcc-c++ -y &>>$LOG
 Status_Check $?
 
-Print "Adding Roboshop User"
+Print "Adding Roboshop User\t"
 id roboshop &>>$LOG
 if [ $? -eq 0 ]; then
  echo "user already there, so skipping" &>>$LOG
@@ -15,7 +15,7 @@ useradd roboshop &>>$LOG
 fi
 Status_Check $?
 
-Print "Downloading catalogue content"
+Print "Downloading catalogue content\t"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
 Status_Check $?
 
