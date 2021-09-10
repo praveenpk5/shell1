@@ -21,9 +21,7 @@ Status_Check $?
 
 Print "extracting catalogue"
 cd /home/roboshop
-rm -rf catalogue
-unzip -o /tmp/catalogue.zip &>>$LOG
-mv catalogue-main catalogue
+rm -rf catalogue && unzip -o /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue
 Status_Check $?
 
 Print "Download NodeJS Dependencies"
@@ -33,7 +31,6 @@ Status_Check $?
 
 chown roboshop:roboshop -R /home/roboshop
 
-# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
+Print "systemd setup"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service && systemctl daemon-reload && systemctl start catalogue &>>$LOG && systemctl enable catalogue &>>$LOG
+Status_Check $?
