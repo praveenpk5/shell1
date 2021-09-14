@@ -11,7 +11,7 @@ curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/fron
 Status_Check $?
 
 Print "Extract Frontend Archive"
-rm -rf /usr/share/nginx/* && cd /usr/share/nginx && unzip -o /tmp/frontend.zip &>>$LOG && mv frontend-main/* .  &>>$LOG && mv static html  &>>$LOG
+rm -rf /usr/share/nginx/* && cd /usr/share/nginx && unzip -o /tmp/frontend.zip  &>>$LOG  && mv frontend-main/* .  &>>$LOG  &&   mv static html  &>>$LOG
 Status_Check $?
 
 Print "Copy Nginx RoboShop Config"
@@ -23,5 +23,5 @@ sed -i -e '/catalogue/ s/localhost/catalogue.roboshop.internal/' -e '/user/ s/lo
 Status_Check $?
 
 Print "Restart Nginx\t\t"
-systemctl restart nginx &>>$LOG && systemctl enable nginx &>>$LOG
-Status_Check $? 
+systemctl restart nginx  &>>$LOG  && systemctl enable nginx   &>>$LOG
+Status_Check $?
