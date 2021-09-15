@@ -19,9 +19,9 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf  &>>$LOG
 Status_Check $?
 
 Print "Update Nginx RoboShop Config"
-sed -i -e '/catalogue/ s/localhost/catalogue.roboshop.internal/' -e '/user/ s/localhost/user.roboshop.internal/' -e '/cart/ s/localhost/cart.roboshop.internal/' -e '/shipping/ s/localhost/shipping.roboshop.internal/' -e '/payment/ s/localhost/payment.roboshop.internal/' /etc/nginx/default.d/roboshop.conf  &>>$LOG
+sed -i -e '/catalogue/ s/localhost/catalogue.roboshop.int/' -e '/user/ s/localhost/user.roboshop.int/' -e '/cart/ s/localhost/cart.roboshop.int/' -e '/shipping/ s/localhost/shipping.roboshop.int/' -e '/payment/ s/localhost/payment.roboshop.int/' /etc/nginx/default.d/roboshop.conf  &>>$LOG
 Status_Check $?
 
 Print "Restart Nginx\t\t"
-systemctl restart nginx  &>>$LOG  && systemctl enable nginx   &>>$LOG
+systemctl restart nginx  &>>$LOG && systemctl enable nginx   &>>$LOG
 Status_Check $?
